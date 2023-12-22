@@ -3,41 +3,102 @@ SocialApp is a microservices-based social media platform crafted with FastAPI, R
 
 # SocialApp Documentation
 
-## Table of Contents
-1. [Introduction](#introduction)
-2. [Features](#features)
-3. [Architecture](#architecture)
-4. [Installation](#installation)
-5. [Configuration](#configuration)
-6. [API Endpoints](#api-endpoints)
-7. [Frontend Components](#frontend-components)
-8. [Authentication](#authentication)
-9. [Deployment](#deployment)
-10. [Contributing](#contributing)
-11. [License](#license)
-
 ## Introduction
 
-SocialApp is a microservices-based social media platform built using FastAPI, React, and MongoDB. It provides a scalable and modern solution for creating vibrant online communities.
+SocialApp is a microservices-based social media platform designed to foster online communities. Built with FastAPI, React, and MongoDB, it provides a scalable and modern solution for users to connect and engage.
 
 ## Features
 
-- User authentication and authorization
-- Post creation and interaction
-- User profiles and engagement
-- Microservices architecture for scalability
+- **User Authentication:** Secure user authentication and authorization system.
+- **Post Interaction:** Create, like, and comment on posts for active engagement.
+- **User Profiles:** Robust user profiles with customizable settings.
+- **Scalable Architecture:** Microservices architecture for scalability and maintainability.
 
 ## Architecture
 
-SocialApp follows a microservices architecture, with separate services for user management, posts, likes, and comments.
+SocialApp follows a microservices architecture, dividing functionality into separate services:
+
+- **User Service:** Manages user-related operations.
+- **Post Service:** Handles post creation, likes, and comments.
+- **API Gateway:** Routes requests to the appropriate services.
+
+## Prerequisites
+
+Ensure you have the following dependencies installed:
+
+- [Node.js](https://nodejs.org/)
+- [Python](https://www.python.org/) (>=3.8)
 
 ## Installation
 
-To install and run SocialApp locally, follow the steps outlined in the [Installation Guide](./docs/installation.md).
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/your-username/SocialApp.git
+    cd SocialApp
+    ```
+
+2. Set up the User and Post services:
+
+    ```bash
+    cd services/user_service
+    python -m venv venv
+    source venv/bin/activate
+    pip install -r requirements.txt
+    ```
+
+    Repeat the same process for the `services/post_service` directory.
+
+3. Set up the API Gateway:
+
+    ```bash
+    cd api-gateway
+    npm install
+    ```
+
+4. Set up the frontend:
+
+    ```bash
+    cd frontend
+    npm install
+    ```
 
 ## Configuration
 
-Customize the configuration by referring to the [Configuration Documentation](./docs/configuration.md).
+Customize SocialApp by configuring the environment variables in each service. Refer to [Configuration Documentation](./docs/configuration.md) for details.
+
+## Running the Application
+
+1. Start the MongoDB database (adjust connection details in services if needed):
+
+    ```bash
+    mongod
+    ```
+
+2. Run the User and Post services:
+
+    ```bash
+    cd services/user_service
+    python main.py
+    ```
+
+    Repeat the same process for the `services/post_service` directory.
+
+3. Run the API Gateway:
+
+    ```bash
+    cd api-gateway
+    npm start
+    ```
+
+4. Run the frontend:
+
+    ```bash
+    cd frontend
+    npm start
+    ```
+
+Access the application at [http://localhost:3000](http://localhost:3000).
 
 ## API Endpoints
 
@@ -45,7 +106,7 @@ Explore the available API endpoints by referring to the [API Documentation](./do
 
 ## Frontend Components
 
-Understand the frontend components and how they interact by referring to the [Frontend Documentation](./docs/frontend-components.md).
+Understand the frontend components and their interactions by referring to the [Frontend Documentation](./docs/frontend-components.md).
 
 ## Authentication
 
